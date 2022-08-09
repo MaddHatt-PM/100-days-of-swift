@@ -7,6 +7,28 @@
 
 import SwiftUI
 
+struct FlagImage: ViewModifier {
+  func body(content: Content) -> some View {
+    content
+      .cornerRadius(5)
+      .shadow(radius: 10)
+  }
+}
+
+struct TitleStyle: ViewModifier {
+  func body(content: Content) -> some View {
+    content
+      .font(.largeTitle.bold())
+      .foregroundColor(.white)
+  }
+}
+
+extension View {
+  func titleStyle() -> some View {
+    modifier(TitleStyle())
+  }
+}
+
 struct ContentView: View {
   @State private var showingRoundAlert = false
   @State private var showingFinalScoreAlert = false
@@ -17,8 +39,19 @@ struct ContentView: View {
   
   private let MAX_ROUNDS = 8
   
-  @State var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"]
-    .shuffled()
+  @State var countries = [
+    "Estonia",
+    "France",
+    "Germany",
+    "Ireland",
+    "Italy",
+    "Nigeria",
+    "Poland",
+    "Russia",
+    "Spain",
+    "UK",
+    "US"
+  ].shuffled()
   @State var correctAnswer = Int.random(in: 0...2)
   
   func flagTapped(_ number: Int) {
@@ -64,8 +97,7 @@ struct ContentView: View {
         Spacer()
         
         Text("Guess the Flag")
-          .font(.largeTitle.bold())
-          .foregroundColor(.white)
+          .titleStyle()
         
         Spacer()
         
@@ -85,9 +117,7 @@ struct ContentView: View {
                 flagTapped(number)
               } label: {
                 Image(countries[number])
-                  .renderingMode(.original)
-                  .cornerRadius(5)
-                  .shadow(radius: 10)
+                  .modifier(FlagImage())
               }
             }
           }
