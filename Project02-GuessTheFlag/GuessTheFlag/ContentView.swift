@@ -34,24 +34,56 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color.blue
+//            LinearGradient(gradient: Gradient(colors: [.blue, .cyan]), startPoint: .top, endPoint: .bottom)
+            RadialGradient(stops: [
+                .init(color:.blue, location: 0.5),
+                .init(color:.cyan, location: 0.5)
+            ], center: .top, startRadius: 200, endRadius: 700)
                 .ignoresSafeArea()
+            
+            
             VStack {
-                VStack {
-                    Text("Tap the flag of")
-                        .foregroundColor(.white)
-                    Text(countries[correctAnswer])
-                        .foregroundColor(.white)
-                }
+                Spacer()
                 
-                ForEach(0..<3) { number in
-                    Button {
-                        flagTapped(number)
-                    } label: {
-                        Image(countries[number])
-                            .renderingMode(.original)
+                Text("Guess the Flag")
+                    .font(.largeTitle.bold())
+                    .foregroundColor(.white)
+                
+                Spacer()
+                
+                VStack (spacing: 15){
+                    VStack {
+                        Text("Tap the flag of")
+                            .foregroundColor(.white)
+                            .font(.subheadline.weight(.heavy))
+                        Text(countries[correctAnswer])
+                            .foregroundStyle(.secondary)
+                            .font(.largeTitle.weight(.semibold))
+                    }
+                    
+                    VStack (spacing: 30){
+                        ForEach(0..<3) { number in
+                            Button {
+                                flagTapped(number)
+                            } label: {
+                                Image(countries[number])
+                                    .renderingMode(.original)
+                                    .cornerRadius(5)
+                                    .shadow(radius: 10)
+                            }
+                        }
                     }
                 }
+                .frame(maxWidth: UIScreen.main.bounds.size.width - 30)
+                .padding(.vertical, 20)
+                .background(.ultraThinMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+                
+                Spacer()
+                Text("Score: \(score)")
+                    .foregroundColor(.white)
+                    .bold()
+                Spacer()
             }
         }
         .alert(scoreTitle, isPresented: $showingScore) {
