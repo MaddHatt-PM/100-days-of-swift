@@ -89,8 +89,8 @@ struct ContentView: View {
           .fill(.blue)
           .frame(width: 700, height:700)
           .padding(.top, -350)
-          
-          Spacer()
+        
+        Spacer()
       }
       
       VStack {
@@ -133,7 +133,7 @@ struct ContentView: View {
           .foregroundColor(.white)
           .lineSpacing(8)
           .multilineTextAlignment(.center)
-          
+        
         Spacer()
       }
     }
