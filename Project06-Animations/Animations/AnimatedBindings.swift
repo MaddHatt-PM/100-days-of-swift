@@ -14,12 +14,13 @@ struct AnimatedBindings: View {
     print(animationAmount)
     
     return VStack {
-      Spacer()
       
       Stepper("Scale amount", value: $animationAmount.animation(
         .easeInOut(duration: 0.5)
         .repeatCount(3, autoreverses: true)
       ), in: 1...10)
+      .padding(.horizontal, 30)
+      .padding(.top, 50)
       
       Spacer()
       
