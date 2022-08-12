@@ -7,6 +7,16 @@
 
 import SwiftUI
 
+extension View {
+  @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+    if condition {
+      transform(self)
+    } else {
+      self
+    }
+  }
+}
+
 struct FlagImage: ViewModifier {
   func body(content: Content) -> some View {
     content
@@ -53,6 +63,9 @@ struct ContentView: View {
     "US"
   ].shuffled()
   @State var correctAnswer = Int.random(in: 0...2)
+  @State var isWaitingForAnimation = false
+  @State var animAmount = 0.0
+  var animTime = 0.8
   
   func flagTapped(_ number: Int) {
     if number == correctAnswer {
@@ -61,17 +74,25 @@ struct ContentView: View {
     } else {
       scoreTitle = "Wrong\nThat's the flag of \(countries[number])"
     }
-    rounds += 1
-    if rounds == MAX_ROUNDS {
-      showingFinalScoreAlert.toggle()
-    } else {
-      showingRoundAlert.toggle()
+    
+    if isWaitingForAnimation == false {
+      isWaitingForAnimation = true
+      DispatchQueue.main.asyncAfter(deadline: .now() + animTime) {
+        isWaitingForAnimation = false
+        rounds += 1
+        if rounds == MAX_ROUNDS {
+          showingFinalScoreAlert.toggle()
+        } else {
+          showingRoundAlert.toggle()
+        }
+      }
     }
   }
-  
+    
   func askQuestion() {
     countries.shuffle()
     correctAnswer = Int.random(in: 0...2)
+    animAmount = 0.0
   }
   
   func restartGame() {
@@ -79,8 +100,13 @@ struct ContentView: View {
     rounds = 0
   }
   
+  func lerp(start: Double, end: Double, value: Double ) -> Double {
+    return start + (end - start) * value
+  }
+  
   var body: some View {
-    ZStack {
+    
+    return ZStack {
       Color.cyan
         .ignoresSafeArea()
       
@@ -115,9 +141,25 @@ struct ContentView: View {
             ForEach(0..<3) { number in
               Button {
                 flagTapped(number)
+                withAnimation (.easeOut(duration: animTime)) {
+                  animAmount = 1.0
+                }
               } label: {
                 Image(countries[number])
                   .modifier(FlagImage())
+                  .if(number == correctAnswer) { view in
+                    view
+                      .rotation3DEffect(
+                        .degrees(animAmount * 360),
+                        axis: (x: 0, y: 1, z: 0),
+                        perspective: 0.6
+                      )
+                  }
+                  .if(number != correctAnswer) { view in
+                    view
+                      .opacity(lerp(start: 1.0, end: 0.25, value: animAmount))
+                      .scaleEffect(lerp(start: 1.0, end: 0.75, value: animAmount))
+                  }
               }
             }
           }

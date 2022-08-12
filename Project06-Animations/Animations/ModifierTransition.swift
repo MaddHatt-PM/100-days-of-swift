@@ -40,6 +40,7 @@ struct ModifierTransition: View {
           .fill(.green)
           .frame(width: 300, height: 200)
           .transition(.pivot)
+          .zIndex(10)
       }
     }
     .onTapGesture {
