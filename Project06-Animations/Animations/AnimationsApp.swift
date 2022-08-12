@@ -11,13 +11,16 @@ enum availableViews: String, CaseIterable {
   case Button = "Implicit Buttons"
   case Bindings = "Animated Bindings"
   case Explicit3DEffect = "Explicit 3D Effect"
-  
+  case AnimationStack = "Animation Stack"
+  case Gestures = "Gestures"
+  case ViewTransitions = "View Transitions"
+  case ModifierTransitions = "Modifier Transitions"
 }
 
 @main
 struct AnimationsApp: App {
   
-  @State var selectedView: availableViews = .Explicit3DEffect
+  @State var selectedView: availableViews = .ModifierTransitions
   
   var body: some Scene {
     WindowGroup {
@@ -28,6 +31,10 @@ struct AnimationsApp: App {
           case .Button: AnimatedButtons()
           case .Bindings: AnimatedBindings()
           case .Explicit3DEffect: ExplicitAnimations()
+          case .AnimationStack: AnimationStack()
+          case .Gestures: Gestures()
+          case .ViewTransitions: ViewTransitions()
+          case .ModifierTransitions: ModifierTransition()
           }
           Spacer()
         }

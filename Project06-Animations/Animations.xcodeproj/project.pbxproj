@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA8717DA28A5E5490097E202 /* AnimationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8717D928A5E5490097E202 /* AnimationStack.swift */; };
+		CA8717DC28A5E8E90097E202 /* Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8717DB28A5E8E90097E202 /* Gestures.swift */; };
+		CA8717DE28A5F89C0097E202 /* ViewTransitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8717DD28A5F89C0097E202 /* ViewTransitions.swift */; };
+		CA8717E028A5FC800097E202 /* ModifierTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8717DF28A5FC800097E202 /* ModifierTransition.swift */; };
 		CA93925628A49F2B0051D94A /* AnimationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA93925528A49F2B0051D94A /* AnimationsApp.swift */; };
 		CA93925828A49F2B0051D94A /* AnimatedButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA93925728A49F2B0051D94A /* AnimatedButtons.swift */; };
 		CA93925A28A49F2D0051D94A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA93925928A49F2D0051D94A /* Assets.xcassets */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA8717D928A5E5490097E202 /* AnimationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationStack.swift; sourceTree = "<group>"; };
+		CA8717DB28A5E8E90097E202 /* Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gestures.swift; sourceTree = "<group>"; };
+		CA8717DD28A5F89C0097E202 /* ViewTransitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTransitions.swift; sourceTree = "<group>"; };
+		CA8717DF28A5FC800097E202 /* ModifierTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifierTransition.swift; sourceTree = "<group>"; };
 		CA93925228A49F2B0051D94A /* Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA93925528A49F2B0051D94A /* AnimationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsApp.swift; sourceTree = "<group>"; };
 		CA93925728A49F2B0051D94A /* AnimatedButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedButtons.swift; sourceTree = "<group>"; };
@@ -59,8 +67,12 @@
 				CA93925728A49F2B0051D94A /* AnimatedButtons.swift */,
 				CA93926328A4A5420051D94A /* AnimatedBindings.swift */,
 				CA93926528A4A7520051D94A /* ExplicitAnimations.swift */,
+				CA8717D928A5E5490097E202 /* AnimationStack.swift */,
+				CA8717DB28A5E8E90097E202 /* Gestures.swift */,
 				CA93925928A49F2D0051D94A /* Assets.xcassets */,
 				CA93925B28A49F2D0051D94A /* Preview Content */,
+				CA8717DD28A5F89C0097E202 /* ViewTransitions.swift */,
+				CA8717DF28A5FC800097E202 /* ModifierTransition.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -143,8 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8717DA28A5E5490097E202 /* AnimationStack.swift in Sources */,
+				CA8717DE28A5F89C0097E202 /* ViewTransitions.swift in Sources */,
 				CA93926628A4A7520051D94A /* ExplicitAnimations.swift in Sources */,
 				CA93925828A49F2B0051D94A /* AnimatedButtons.swift in Sources */,
+				CA8717DC28A5E8E90097E202 /* Gestures.swift in Sources */,
+				CA8717E028A5FC800097E202 /* ModifierTransition.swift in Sources */,
 				CA93926428A4A5420051D94A /* AnimatedBindings.swift in Sources */,
 				CA93925628A49F2B0051D94A /* AnimationsApp.swift in Sources */,
 			);
