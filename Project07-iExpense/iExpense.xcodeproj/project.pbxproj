@@ -16,6 +16,9 @@
 		CA8F49AE28A6D3B80057A2A8 /* OnDeleteOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F49AD28A6D3B80057A2A8 /* OnDeleteOverview.swift */; };
 		CA8F49B028A6D5680057A2A8 /* UserSettingsOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F49AF28A6D5680057A2A8 /* UserSettingsOverview.swift */; };
 		CA8F49B228A6D8930057A2A8 /* ObjectArchivalOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F49B128A6D8930057A2A8 /* ObjectArchivalOverview.swift */; };
+		CA8F49B528A6E0570057A2A8 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F49B428A6E0570057A2A8 /* ExpenseItem.swift */; };
+		CA8F49B728A6E08F0057A2A8 /* Expenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F49B628A6E08F0057A2A8 /* Expenses.swift */; };
+		CA8F49B928A6E7A60057A2A8 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8F49B828A6E7A60057A2A8 /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		CA8F49AD28A6D3B80057A2A8 /* OnDeleteOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDeleteOverview.swift; sourceTree = "<group>"; };
 		CA8F49AF28A6D5680057A2A8 /* UserSettingsOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsOverview.swift; sourceTree = "<group>"; };
 		CA8F49B128A6D8930057A2A8 /* ObjectArchivalOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectArchivalOverview.swift; sourceTree = "<group>"; };
+		CA8F49B428A6E0570057A2A8 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 1; };
+		CA8F49B628A6E08F0057A2A8 /* Expenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses.swift; sourceTree = "<group>"; };
+		CA8F49B828A6E7A60057A2A8 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,15 +67,14 @@
 		CA8F499828A6CBD60057A2A8 /* iExpense */ = {
 			isa = PBXGroup;
 			children = (
+				CA8F49B328A6E0220057A2A8 /* Overviews */,
 				CA8F499D28A6CBD70057A2A8 /* Assets.xcassets */,
 				CA8F499B28A6CBD60057A2A8 /* ContentView.swift */,
 				CA8F499928A6CBD60057A2A8 /* iExpenseApp.swift */,
-				CA8F49AD28A6D3B80057A2A8 /* OnDeleteOverview.swift */,
 				CA8F499F28A6CBD70057A2A8 /* Preview Content */,
-				CA8F49A928A6D1B00057A2A8 /* SheetsOverview.swift */,
-				CA8F49A728A6CD020057A2A8 /* StatesOverview.swift */,
-				CA8F49AF28A6D5680057A2A8 /* UserSettingsOverview.swift */,
-				CA8F49B128A6D8930057A2A8 /* ObjectArchivalOverview.swift */,
+				CA8F49B428A6E0570057A2A8 /* ExpenseItem.swift */,
+				CA8F49B628A6E08F0057A2A8 /* Expenses.swift */,
+				CA8F49B828A6E7A60057A2A8 /* AddView.swift */,
 			);
 			path = iExpense;
 			sourceTree = "<group>";
@@ -80,6 +85,18 @@
 				CA8F49A028A6CBD70057A2A8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CA8F49B328A6E0220057A2A8 /* Overviews */ = {
+			isa = PBXGroup;
+			children = (
+				CA8F49AD28A6D3B80057A2A8 /* OnDeleteOverview.swift */,
+				CA8F49A928A6D1B00057A2A8 /* SheetsOverview.swift */,
+				CA8F49A728A6CD020057A2A8 /* StatesOverview.swift */,
+				CA8F49AF28A6D5680057A2A8 /* UserSettingsOverview.swift */,
+				CA8F49B128A6D8930057A2A8 /* ObjectArchivalOverview.swift */,
+			);
+			path = Overviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,9 +171,12 @@
 			files = (
 				CA8F499C28A6CBD60057A2A8 /* ContentView.swift in Sources */,
 				CA8F49A828A6CD020057A2A8 /* StatesOverview.swift in Sources */,
+				CA8F49B928A6E7A60057A2A8 /* AddView.swift in Sources */,
 				CA8F49AE28A6D3B80057A2A8 /* OnDeleteOverview.swift in Sources */,
+				CA8F49B528A6E0570057A2A8 /* ExpenseItem.swift in Sources */,
 				CA8F49AA28A6D1B00057A2A8 /* SheetsOverview.swift in Sources */,
 				CA8F49B228A6D8930057A2A8 /* ObjectArchivalOverview.swift in Sources */,
+				CA8F49B728A6E08F0057A2A8 /* Expenses.swift in Sources */,
 				CA8F49B028A6D5680057A2A8 /* UserSettingsOverview.swift in Sources */,
 				CA8F499A28A6CBD60057A2A8 /* iExpenseApp.swift in Sources */,
 			);
