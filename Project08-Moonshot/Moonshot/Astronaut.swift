@@ -11,4 +11,8 @@ struct Astronaut: Codable, Identifiable {
   let id: String
   let name: String
   let description: String
+  
+  var formattedDescription: String {
+    "\t" + description.replacingOccurrences(of: "\n", with: "\n\t")
+  }
 }
